@@ -1,0 +1,43 @@
+Oii! Esse é um documento que orienta a Helô para saber
+o funcionamento dos repositórios e comandos git dela
+
+Existem 2 repositórios:
+
+Repositório   |   Link do repositório  
+
+origin        |  https://github.com/MarisaNasc/Projeto_Integrador_MFix.git
+origin-helo   |  https://github.com/heloisapsg/pi3_testes
+
+como verificar? 
+_____________________
+|   git remote -v   |
+|___________________|
+
+Ao dar git push, a Helô precisa saber primeiro:
+Para qual repositório eu estou dando push?
+
+Para os testes da Helô ou para o projeto final?
+
+-   Se é para o projeto:
+    ______________________________
+    |    git pull origin main    |
+    |____________________________|
+
+-   Se é para os testes da Helô:
+    _____________________________________________
+    |    git pull origin-helo testes_da_helo    |
+    |___________________________________________|
+
+Então fica:
+
+|    Repository    |      Branch      |    Quem    |
+| ---------------- | ---------------- | ---------- |
+|      origin      | `main`           |    grupo   |
+|    origin-helo   | `testes_da_helo` |    Helô    |
+
+MAS se a Helô quiser mostrar que o teste deu certo, ela vai dizer:
+
+    _____________________________________________
+    |       git pull origin-helo origin         |
+    |___________________________________________|
+
