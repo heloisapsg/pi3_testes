@@ -10,7 +10,7 @@ origin-helo   |  https://github.com/heloisapsg/pi3_testes
 
 como verificar? 
 _____________________
-|   git remote -v   |
+|   c  |
 |___________________|
 
 Ao dar git push, a Helô precisa saber primeiro:
@@ -37,7 +37,8 @@ Então fica:
 
 MAS se a Helô quiser mostrar que o teste deu certo, ela vai dizer:
 
-    _____________________________________________
-    |       git pull origin-helo origin         |
-    |___________________________________________|
+    __________________________________________________________
+    |       git push origin-helo testes_da_helo:main         |
+    |________________________________________________________|
+
 

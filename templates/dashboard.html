@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <title>Dashboard BI</title>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <link rel="stylesheet" href="/static/style.css">
-
 </head>
 
 <body>
 
-<div class="topo">
+<div class="topo"> <!--Essa parte é o cabeçalho -->
 
     <h1>DASHBOARD BI</h1>
 
-    <a href="/">
-        Interface DW
-    </a>
+    <a href="/"> Interface DW </a> <!-- Link para o DW -->
 
-</div>
+</div> <!-- Fim do cabeçalho -->
 
-<div class="x">
+<div class="x"> <!-- Parte dos KPIs / métricas-->
     <div class="kpis">
 
         <div class="kpi">
@@ -41,12 +35,12 @@
         </div>
 
     </div>
-</div>
+</div> <!-- Fim dos KPIs / métricas-->
 
 <div class="quadradinho">
     <div class="grafico">
-
-        <canvas id="graficoProdutos"></canvas>
+        <h1>Top 5 Produtos Mais Vendidos</h1>
+        <div id="graficoProdutos"></div>
 
     </div>
 </div>

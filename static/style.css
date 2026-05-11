@@ -1,85 +1,153 @@
 body{
-    font-family: Arial;
-    background:#101522;
+    /*TEXTO*/
     color:white;
+    font-family: Arial;
+    
+    /*FUNDO*/
+    background:#101522;
+
+    /*TAMANHO*/
     margin:0;
+    width:100%;
 }
 
 .topo{
+    /*FUNDO*/
     background:#182235;
-    padding:20px;
+
+    /*ALINHAMENTO*/
     display:flex;
     justify-content:space-between;
+
+    /*TAMANHO*/
+    padding:20px;
 }
 
 a{
+    /*DECORAÇÃO*/
     color:white;
     text-decoration:none;
 }
 
 .filtros{
+    /*TAMANHO*/
     padding:20px;
+
+    /*ALINHAMENTO*/
     display:flex;
     gap:10px;
 }
 
 input, select, button{
+    /*TAMANHO*/
     padding:12px;
+
+    /*ALINHAMENTO*/
     border:none;
     border-radius:8px;
 }
 
 button{
-    background:#3d7eff;
+    /*TEXTO*/
     color:white;
+
+    /*FUNDO*/
+    background:#3d7eff;
 }
 
 .cards{
+    /*ALINHAMENTO*/
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
+
+    /*TAMANHO*/
     padding:20px;
 }
 
 .card{
+    /*FUNDO*/
     background:#182235;
+
+    /*TAMANHO*/
     padding:20px;
     border-radius:15px;
 }
 
 .kpis{
+    /*ALINHAMENTO*/
     display:flex;
+
+    /*TAMANHO*/
     gap:20px;
     padding:20px;
 }
 
 .kpi{
+    /*FUNDO*/
     background:#182235;
+
+    /*ALINHAMENTO*/
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /*TAMANHO*/
     padding:20px;
     border-radius:15px;
-    /*width:250px;*/
+    width:30%;
+    height: 55px;
+}
+
+.kpi h2{
+    /*TAMANHO*/
+    font-size: 40px;
+
+    /*ALINHAMENTO*/
+    margin:0px;
+    margin-top:5%;
+
+}
+
+.kpi p{
+    /*TAMANHO*/
+    font-size:25px;
+
+    /*ALINHAMENTO*/
+    margin-top:1px;
 }
 
 .grafico{
+    /*FUNDO*/
     background:white;
+
+    /*TAMANHO*/
     margin:20px;
     padding:20px;
     border-radius:20px;
 }
 
 .lista{
+    /*TAMANHO*/
     padding:20px;
 }
 
 .produto{
+    /*FUNDO*/
     background:#182235;
+
+    /*TAMANHO*/
     padding:15px;
     margin-bottom:10px;
     border-radius:10px;
+
+    /*DECORAÇÃO*/
     cursor:pointer;
 }
 
 .modal{
+    /*ALINHAMENTO*/
     display:none;
     position:fixed;
     z-index:1;
@@ -87,12 +155,19 @@ button{
     top:0;
     width:100%;
     height:100%;
+
+    /*FUNDO*/
     background:rgba(0,0,0,0.8);
 }
 
 .modal-content{
+    /*FUNDO*/
     background:white;
+
+    /*TEXTO*/
     color:black;
+
+    /*TAMANHO*/
     margin:5% auto;
     padding:20px;
     width:70%;
@@ -102,13 +177,21 @@ button{
 }
 
 .fechar{
-    float:right;
-    cursor:pointer;
+    /*TEXTO*/
     font-size:30px;
+
+    /*ALINHAMENTO*/
+    float:right;
+    
+    /*DECORAÇÃO*/
+    cursor:pointer;
 }
 
 .quadradinho{
+    /*FUNDO*/
     background:#182235;
+
+    /*TAMANHO*/
     width:60%;
     height: 30%;
 }
