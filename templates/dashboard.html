@@ -22,30 +22,33 @@
 
 </div>
 
-<div class="kpis">
+<div class="x">
+    <div class="kpis">
 
-    <div class="kpi">
-        <h2>{{ kpis[0].total_mov }}</h2>
-        <p>Movimentações</p>
+        <div class="kpi">
+            <h2>{{ kpis[0].total_mov }}</h2>
+            <p>Movimentações</p>
+        </div>
+
+        <div class="kpi">
+            <h2>R$ {{ kpis[0].receita }}</h2>
+            <p>Receita</p>
+        </div>
+
+        <div class="kpi">
+            <h2>{{ kpis[0].produtos }}</h2>
+            <p>Produtos</p>
+        </div>
+
     </div>
-
-    <div class="kpi">
-        <h2>R$ {{ kpis[0].receita }}</h2>
-        <p>Receita</p>
-    </div>
-
-    <div class="kpi">
-        <h2>{{ kpis[0].produtos }}</h2>
-        <p>Produtos</p>
-    </div>
-
 </div>
 
+<div class="quadradinho">
+    <div class="grafico">
 
-<div class="grafico">
+        <canvas id="graficoProdutos"></canvas>
 
-<canvas id="graficoProdutos"></canvas>
-
+    </div>
 </div>
 
 
@@ -85,7 +88,7 @@ X
 
 </div>
 
-<script>
+<script type="">
 
 const produtos = {{ top_produtos|tojson }};
 
@@ -165,6 +168,5 @@ function fecharModal(){
 }
 
 </script>
-
 </body>
 </html>

@@ -1,4 +1,4 @@
--- Active: 1773179145047@@127.0.0.1@5432@Mfix_BD
+-- Active: 1774975794986@@127.0.0.1@5432@mfix
 DROP TABLE IF EXISTS dim_produto;
 CREATE TABLE dim_produto (
     id_produto INT PRIMARY KEY,

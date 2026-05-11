@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 engine = create_engine(
-    "postgresql+psycopg2://postgres:23062006@localhost:5432/Mfix_BD"
+    "postgresql+psycopg2://postgres:123456@localhost:5432/mfix"
 )
 
 def consultar(query, params={}):

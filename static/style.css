@@ -57,7 +57,7 @@ button{
     background:#182235;
     padding:20px;
     border-radius:15px;
-    width:250px;
+    /*width:250px;*/
 }
 
 .grafico{
@@ -105,4 +105,10 @@ button{
     float:right;
     cursor:pointer;
     font-size:30px;
+}
+
+.quadradinho{
+    background:#182235;
+    width:60%;
+    height: 30%;
 }
