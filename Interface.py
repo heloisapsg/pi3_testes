@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from sqlalchemy import create_engine, text
 import pandas as pd
-#import plotly.graph_objects as go
+import plotly.graph_objects as go
 
 app = Flask(__name__)
 
@@ -149,6 +149,16 @@ def dashboard():
         top_produtos=top_produtos,
         entrada_saida=entrada_saida
     )
+
+
+#-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+# Dashboard - Coluna dos top 5 produtos mais vendidos
+#-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+@app.route("/dashboard")
+def top5produtos():
+
+    pass
+    
 
 
 # =========================

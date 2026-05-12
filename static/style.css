@@ -191,7 +191,32 @@ button{
     /*FUNDO*/
     background:#182235;
 
+    /*ALINHAMENTO*/
+    display:flex;
+    justify-content: center;
+    float: inline-end;
+    
+
     /*TAMANHO*/
-    width:60%;
-    height: 30%;
+    width: 47%;
+    height: 100%;
+
+    /*DECORAÇÃO*/
+    border-radius:10px;
+}
+
+.parte2{
+    /*FUNDO*/
+    /*background:#02da2d;*/
+
+    /*ALINHAMENTO*/
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    /*TAMANHO*/
+    height: 400px;
+    width:100%;
 }

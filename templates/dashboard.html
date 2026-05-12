@@ -16,7 +16,7 @@
 
 </div> <!-- Fim do cabeçalho -->
 
-<div class="x"> <!-- Parte dos KPIs / métricas-->
+<div class="parte1"> <!-- Parte dos KPIs / métricas-->
     <div class="kpis">
 
         <div class="kpi">
@@ -37,13 +37,20 @@
     </div>
 </div> <!-- Fim dos KPIs / métricas-->
 
-<div class="quadradinho">
-    <div class="grafico">
+<div class="parte2"> <!-- Parte dos KPIs / métricas-->
+    <div class="quadradinho">
         <h1>Top 5 Produtos Mais Vendidos</h1>
-        <div id="graficoProdutos"></div>
+    {{ grafico_html | safe }}
+         <!--<div class="grafico">
+            <h1>Top 5 Produtos Mais Vendidos</h1>
+           <div id="graficoProdutos"></div>
 
+        </div>-->
     </div>
-</div>
+    <div class="quadradinho">
+        <h1>Entrada vs Saídas</h1>
+    </div>
+</div>>
 
 
 <div class="lista">
