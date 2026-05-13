@@ -205,6 +205,16 @@ button{
     border-radius:10px;
 }
 
+.conteudo-grafico{
+    width:100%;
+    height:100%;
+}
+
+.conteudo-grafico h1{
+    text-align:center;
+}
+
+
 .parte2{
     /*FUNDO*/
     /*background:#02da2d;*/

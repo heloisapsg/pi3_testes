@@ -102,6 +102,54 @@ def interface_dw():
 # DASHBOARD
 # =========================
 
+# @app.route("/dashboard")
+# def dashboard():
+
+#     kpis = consultar("""
+#     SELECT
+#         COUNT(*) AS total_mov,
+#         SUM(valor_total) AS receita,
+#         SUM(quantidade) AS quantidade_total,
+#         COUNT(DISTINCT id_produto) AS produtos
+#     FROM fato_movimentacao
+#     """)
+
+#     top_produtos = consultar("""
+#     SELECT
+#         p.descricao_prod,
+#         SUM(fm.quantidade) AS total
+
+#     FROM fato_movimentacao fm
+
+#     JOIN dim_produto p
+#     ON fm.id_produto = p.id_produto
+
+#     GROUP BY p.descricao_prod
+
+#     ORDER BY total DESC
+#     LIMIT 5
+#     """)
+
+#     entrada_saida = consultar("""
+#     SELECT
+#         tm.descricao_mov,
+#         SUM(fm.quantidade) AS total
+
+#     FROM fato_movimentacao fm
+
+#     JOIN dim_tipo_mov tm
+#     ON fm.id_tipo_mov = tm.id_tipo_mov
+
+#     GROUP BY tm.descricao_mov
+#     """)
+
+#     return render_template(
+#         "dashboard.html",
+#         kpis=kpis,
+#         top_produtos=top_produtos,
+#         entrada_saida=entrada_saida
+#     )
+
 @app.route("/dashboard")
 def dashboard():
 
@@ -143,22 +191,58 @@ def dashboard():
     GROUP BY tm.descricao_mov
     """)
 
+    # =========================
+    # GRÁFICO 1 - BARRAS
+    # =========================
+
+    nomes_produtos = [p["descricao_prod"] for p in top_produtos]
+    totais_produtos = [float(p["total"]) for p in top_produtos]
+
+    fig_barra = go.Figure()
+
+    fig_barra.add_trace(go.Bar(
+        x=nomes_produtos,
+        y=totais_produtos
+    ))
+
+    fig_barra.update_layout(
+        paper_bgcolor="#182235",
+        plot_bgcolor="#182235",
+        font=dict(color="white"),
+        margin=dict(l=20, r=20, t=20, b=20)
+    )
+
+    grafico_barra = fig_barra.to_html(full_html=False)
+
+    # =========================
+    # GRÁFICO 2 - ROSCA
+    # =========================
+
+    labels = [e["descricao_mov"] for e in entrada_saida]
+    valores = [float(e["total"]) for e in entrada_saida]
+
+    fig_rosca = go.Figure()
+
+    fig_rosca.add_trace(go.Pie(
+        labels=labels,
+        values=valores,
+        hole=0.5
+    ))
+
+    fig_rosca.update_layout(
+        paper_bgcolor="#182235",
+        font=dict(color="white"),
+        margin=dict(l=20, r=20, t=20, b=20)
+    )
+
+    grafico_rosca = fig_rosca.to_html(full_html=False)
+
     return render_template(
         "dashboard.html",
         kpis=kpis,
-        top_produtos=top_produtos,
-        entrada_saida=entrada_saida
-    )
-
-
-#-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-# Dashboard - Coluna dos top 5 produtos mais vendidos
-#-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-@app.route("/dashboard")
-def top5produtos():
-
-    pass
-    
+        grafico_barra=grafico_barra,
+        grafico_rosca=grafico_rosca
+    )   
 
 
 # =========================
